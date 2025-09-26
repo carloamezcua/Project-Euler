@@ -3,3 +3,7 @@
 # The largest palindrome made from the product of two 2-digit number is 9009 = 91 x 99.
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
+a = 91 * 99
+A = str(a)
+
+print(A == A[::-1])
