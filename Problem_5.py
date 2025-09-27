@@ -28,15 +28,13 @@ for i in range(2,21):
     print(f)
 
 
-
-#n = 1
-#div = []
-
-#while len(div) < 20:
+# Lo encuentra pero tarda mucho tiempo.
+# n = 1
+# div = []
+# while len(div) < 20:
 #    div = []
 #    for i in range (1, 21):
 #        if n % i == 0:
 #            div.append(i)
 #    n += 1
-
-#print(div)
+# print(div)

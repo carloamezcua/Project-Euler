@@ -13,13 +13,14 @@ primo = 2
 while n > 1:
 
     # Si no hay residuo cuando se divide por este número, se agrega a la lista y se
-    # divide entre el primo en la iteración en curso
+    # divide entre el primo en la iteración en curso para encontrar otro factor primo.
     if n % primo == 0:
         factores_primos.append(primo)
         n = n/primo
 
     # Si hay residuo, suma 1 al contador de los números primos, hasta llegar a otro,
-    # lo encuentra porque ya se dividio entre
+    # lo encuentra porque ya se dividio entre el primo más pequeño sin residuo, como
+    # solo dividirá entre números primos y no números compuestos como 4, 9, 10.
     else:
         primo += 1
 print(max(factores_primos))
