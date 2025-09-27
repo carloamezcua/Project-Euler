@@ -4,11 +4,22 @@
 
 factores_primos = []
 n = 600851475143
-i = 2
+
+# Primer número primo, después comenzará a sumar de 1 en 1 hasta llegar
+# a otro número primo que sea divisible entre n sin que haya residuo.
+primo = 2
+
+# Mientras n no sea 1 sigue dividiendo.
 while n > 1:
-    if n % i == 0:
-        factores_primos.append(i)
-        n = n/i
+
+    # Si no hay residuo cuando se divide por este número, se agrega a la lista y se
+    # divide entre el primo en la iteración en curso
+    if n % primo == 0:
+        factores_primos.append(primo)
+        n = n/primo
+
+    # Si hay residuo, suma 1 al contador de los números primos, hasta llegar a otro,
+    # lo encuentra porque ya se dividio entre
     else:
-        i += 1
+        primo += 1
 print(max(factores_primos))
