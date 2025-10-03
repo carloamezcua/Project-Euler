@@ -12,7 +12,7 @@ suma = 0
 # Recorre los números del 1 al 999 (debajo de 1000).
 for i in range(1,1000):
 
-    # Si el número "i" de la iteración actual es divisible entre 5 o 3, sin
+    # Si el número "i" de la iteración actual es divisible entre 3 o 5, sin
     # residuo, lo toma como verdadero.
     if (i % 3 == 0) or (i % 5 == 0):
 
