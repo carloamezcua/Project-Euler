@@ -1,30 +1,22 @@
-# n = 10
-# primos = [2]
-# k = 3
-# #while primos[-1] < n:
-# for i in range(1, n):
-#     if primos[-1] % k == 0:
-#         k += 1
-#         break
-#     else:
-#         primos.append(k)
-#         k += 1
-# print(primos, k)
-
-
-n = 97
+n = 3
 i = 2
 
+# Estas condicionales se agregaron porque el ciclo de abajo no funciona cuando
+# n = 1,2 o 3.
+if n == 1:
+    print(" 1 no es primo.")
+elif n == 2:
+    print("2 es primo.")
+elif n == 3:
+    print("3 es primo")
+
+# Esta parte solo funciona cuando n > 3. Es por eso que agregué los
+# condicionales arriba.
 while i <= n**(1/2):
-    if n == 1:
-        print(str(n) + " no es un número primo.")
-        break
     if n % i == 0:
-        print(str(n) +" es divisible entre " + str(i))
         print(str(n) + " no es primo.")
         break
     if n % i != 0:
-        print(str(n) +" no es divisible entre " + str(i))
         i += 1
     if i > n**(1/2):
-        print ("Es primo.")
+        print (str(n) + " es primo.")
