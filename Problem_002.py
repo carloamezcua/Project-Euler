@@ -6,18 +6,57 @@
 # By considering the terms in the Fibonacci sequence whose values do not
 # exceed four million, find the sum of the even-valued terms.
 
+
+# Crea una lista llamada "Fibonacci" a la que le iremos agregando los
+# siguientes números de la sucesión.
 Fibonacci = [1, 2]
+
+# Iniciamos un contador en cero que ira sumando en cada iteración del while
+# para sumar solo los últimos dos números de la lista Fibonacci y así
+# encontrar el siguiente número en la sucesión.
 i=0
+
+# Ciclo que ira calculando el siguiente fibonacci de la sucesión y guardándolo
+# hasta que el último se.
 while True:
+
+    # El siguiente fibonacci es la suma de los últimos dos de la sucesión.
     Fibonacci_n = Fibonacci[i] + Fibonacci[i+1]
+
+    # Guardamos el fibonacci encontrado al final de la lista Fibonacci.
     Fibonacci.append(Fibonacci_n)
+
+    # El contador que ira sumando en la iteración para encontrar indicarle al
+    # ciclo que tiene que sumar los últimos dos, esto es sumar el penúltimo
+    # elemento "i" más el último elemento (i + 1) de la lista Fibonacci.
     i+=1
+
+    # Si el último número en Fibonacci es mayor a 4 000 000 se detiene el
+    # ciclo.
     if Fibonacci[-1] > 4000000:
         break
+
+# Ya que el objetivo del problema es calcular la suma de los fibonacci pares
+# menores a 4 000 000, creamos una variable "suma" donde los iremos agregando.
 suma = 0
+
+# Se crea una lista vacía para ir guardando los fibonacci pares que vayamos
+# encontrando.
 Fibonacci_par = []
-for i in range(len(Fibonacci)):
+
+# En este ciclo vamos a ir verificando si cada elemento de la lista Fibonacci
+# es un número par.
+for i in range(len(Fibonacci[:-1:])):
+
+    print(i)
+
+    # Esta es la condición que verifica si el fibonacci de la lista número "i"
+    # es par. 
     if Fibonacci[i] % 2 == 0:
+
+        # Si es par entra a esta parte donde este elemento se lo sumamos a la
+        # variable "suma" creada anteriormente. 
         suma += Fibonacci[i]
         Fibonacci_par.append(Fibonacci[i])
-print(suma)
+
+print(sum(Fibonacci_par))
