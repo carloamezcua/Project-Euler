@@ -36,10 +36,6 @@ while True:
     if Fibonacci[-1] > 4000000:
         break
 
-# Ya que el objetivo del problema es calcular la suma de los fibonacci pares
-# menores a 4 000 000, creamos una variable "suma" donde los iremos agregando.
-suma = 0
-
 # Se crea una lista vacía para ir guardando los fibonacci pares que vayamos
 # encontrando.
 Fibonacci_par = []
@@ -48,15 +44,15 @@ Fibonacci_par = []
 # es un número par.
 for i in range(len(Fibonacci[:-1:])):
 
-    print(i)
-
     # Esta es la condición que verifica si el fibonacci de la lista número "i"
     # es par. 
     if Fibonacci[i] % 2 == 0:
 
-        # Si es par entra a esta parte donde este elemento se lo sumamos a la
-        # variable "suma" creada anteriormente. 
-        suma += Fibonacci[i]
+        # Si es par entra a esta parte donde este elemento se lo agregamos a
+        # la lista Fibonacci_par 
         Fibonacci_par.append(Fibonacci[i])
 
+# Ya que termina de recorrer todos los elementos de Fibonacci (menos el último
+# porque es mayor a 4 000 000) y guardar solo los pares en la nueva lista,
+# sumamos todos los elementos de esa lista con "sum". 
 print(sum(Fibonacci_par))
