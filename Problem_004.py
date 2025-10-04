@@ -5,7 +5,6 @@
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
 
-
 # Se crean dos listas (m y n), cada una con tres elementos que corresponden a
 # las centenas, decenas y unidades. 
 m = [9, 0, 0]

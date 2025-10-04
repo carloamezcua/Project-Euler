@@ -2,6 +2,7 @@
 # The prime factors of 13195 are 5, 7, 13 and 29.
 # What is the largest prime factor of the number 600851475143?
 
+
 # El problema se resolvió factorizando el número "n". Aquí creamos una lista
 # vacía para ir guardando los factores primos. 
 factores_primos = []
