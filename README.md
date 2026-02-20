@@ -2,30 +2,71 @@
 
 ![Language](https://img.shields.io/badge/Language-Python-blue)
 ![Project Euler](https://img.shields.io/badge/Project%20Euler-Mathematics-green)
+![Sin dependencias externas](https://img.shields.io/badge/Dependencias-0%20externas-success)
 
-Este repositorio contiene mis soluciones personales a los problemas computacionales de **Project Euler**. El objetivo de este proyecto es practicar habilidades de programación, pensamiento matemático y diseño eficiente de algoritmos mientras documento mi proceso de aprendizaje. Cada solución se verifica en el sitio web oficial de Project Euler antes de marcarla como completa.
+Este repositorio contiene mis soluciones personales a los problemas computacionales de **Project Euler**. El objetivo de este proyecto es practicar habilidades de programación, pensamiento matemático y diseño eficiente de algoritmos mientras documento mi proceso de aprendizaje.
+
+Cada solución se verifica en el sitio web oficial de Project Euler antes de marcarla como completa.
 
 ## Mi Enfoque
 
-Mi metodología se enfoca en entender los conceptos matemáticos detrás de cada problema en lugar de solo encontrar una solución que funcione. Priorizo:
-- Código Python claro y legible sin dependencias externas  
+Mi metodología se enfoca en entender los conceptos matemáticos detrás de cada problema en lugar de solo encontrar una solución que funcione.
+
+Priorizo:
+- Código Python claro y legible
 - Explicaciones matemáticas y documentación del proceso de pensamiento
 - Verificación de resultados en el sitio web oficial de Project Euler
 - Mejora iterativa de las soluciones para optimización
+- **No usar librerías externas**: construir herramientas propias cuando sea necesario
+
+## Filosofía de dependencias
+
+Este proyecto sigue una regla simple:
+
+> Resolver con Python puro y utilidades propias, sin paquetes de terceros.
+
+Cuando un problema requiera funciones reutilizables (primos, factores, divisores, etc.), estas se incorporarán en una librería interna del proyecto.
+
+## Librería interna: `euler_lib`
+
+Se agregó la carpeta `euler_lib/` como base para una librería propia de apoyo a los notebooks.
+
+Actualmente incluye un placeholder inicial para validar la integración y servir como punto de expansión:
+
+- Archivo base: `euler_lib/placeholder.py`
+- Función inicial: `saludo_euler()`
+
+Con el tiempo, esta librería incluirá funciones matemáticas reutilizables para evitar duplicación de lógica entre problemas.
 
 ## Detalles Técnicos
 
 - **Lenguaje:** Python (puro, sin librerías externas)
-- **Formato:** Jupyter Notebooks (.ipynb)
+- **Formato principal:** Jupyter Notebooks (`.ipynb`)
+- **Utilidades internas:** módulo propio `euler_lib/`
 
 ## Cómo Usar
 
-Cada notebook contiene el enunciado original del problema de Project Euler seguido de mi solución y cualquier insight matemático relevante. Simplemente abre los notebooks en Jupyter o cualquier visor compatible.
+Cada notebook contiene:
+1. Enunciado original del problema
+2. Solución en Python
+3. (Opcional) notas o insights matemáticos
+
+Puedes abrirlos en Jupyter o cualquier visor compatible con notebooks.
+
+## Estructura del repositorio (resumen)
+
+- `001_multiples_of_3_or_5.ipynb` … `013_large_sum.ipynb`
+- `euler_lib/`
+	- `__init__.py`
+	- `placeholder.py`
+- `README.md`
 
 ## Sobre Project Euler
 
-Project Euler es una serie de problemas desafiantes de matemáticas/programación que requieren más que solo conocimientos matemáticos para resolver. Visita [projecteuler.net](https://projecteuler.net/) para explorar todos los problemas.
+Project Euler es una serie de problemas desafiantes de matemáticas/programación que requieren más que solo conocimientos matemáticos para resolver.
+
+Visita [projecteuler.net](https://projecteuler.net/) para explorar todos los problemas.
 
 ---
 
-*Este repositorio sirve tanto como un viaje de aprendizaje como un portafolio de habilidades de resolución de problemas. Las soluciones se mejoran y documentan continuamente con fines educativos.*
+*Este repositorio funciona como viaje de aprendizaje y portafolio técnico. Las soluciones y la librería interna evolucionan de forma continua con fines educativos.*
