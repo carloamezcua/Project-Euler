@@ -29,14 +29,23 @@ Cuando un problema requiera funciones reutilizables (primos, factores, divisores
 
 ## Librería interna: `euler_lib`
 
-Se agregó la carpeta `euler_lib/` como base para una librería propia de apoyo a los notebooks.
+La carpeta `euler_lib/` contiene una librería propia de apoyo a los notebooks con funciones matemáticas reutilizables.
 
-Actualmente incluye un placeholder inicial para validar la integración y servir como punto de expansión:
+### Funciones disponibles
 
-- Archivo base: `euler_lib/placeholder.py`
-- Función inicial: `saludo_euler()`
+| Función | Módulo | Descripción |
+|---|---|---|
+| `factores_primos(n)` | `factores_primos.py` | Descompone un número entero en sus factores primos |
 
-Con el tiempo, esta librería incluirá funciones matemáticas reutilizables para evitar duplicación de lógica entre problemas.
+### Uso
+
+```python
+import euler_lib as euler
+
+euler.factores_primos(600851475143)  # [71, 839, 1471, 6857]
+```
+
+Con el tiempo, esta librería se expandirá con más funciones matemáticas reutilizables para evitar duplicación de lógica entre problemas.
 
 ## Detalles Técnicos
 
@@ -58,7 +67,7 @@ Puedes abrirlos en Jupyter o cualquier visor compatible con notebooks.
 - `001_multiples_of_3_or_5.ipynb` … `013_large_sum.ipynb`
 - `euler_lib/`
 	- `__init__.py`
-	- `placeholder.py`
+	- `factores_primos.py`
 - `README.md`
 
 ## Sobre Project Euler

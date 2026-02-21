@@ -1,0 +1,14 @@
+# Bytecode de Python (se genera al importar módulos)
+__pycache__/
+*.pyc
+*.pyo
+
+# Checkpoints de Jupyter (se genera al guardar notebooks)
+.ipynb_checkpoints/
+
+# Configuración local de VS Code
+.vscode/
+
+# Archivos del sistema operativo Windows
+Thumbs.db
+Desktop.ini
