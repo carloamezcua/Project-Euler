@@ -1,0 +1,1 @@
+from .factores_primos import factores_primos
