@@ -1,1 +1,2 @@
 from .factores_primos import factores_primos
+from .potencias_factores import potencias_factores
