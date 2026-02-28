@@ -1,81 +1,117 @@
-# Soluciones de Project Euler
+# Project Euler Solutions
 
 ![Language](https://img.shields.io/badge/Language-Python-blue)
 ![Project Euler](https://img.shields.io/badge/Project%20Euler-Mathematics-green)
-![Sin dependencias externas](https://img.shields.io/badge/Dependencias-0%20externas-success)
+![No external dependencies](https://img.shields.io/badge/Dependencies-0%20external-success)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-12-blueviolet)
 
-Este repositorio contiene mis soluciones personales a los problemas computacionales de **Project Euler**. El objetivo de este proyecto es practicar habilidades de programación, pensamiento matemático y diseño eficiente de algoritmos mientras documento mi proceso de aprendizaje.
+This repository contains my personal solutions to [Project Euler](https://projecteuler.net/) computational problems. The goal is to practice programming skills, mathematical thinking, and efficient algorithm design while documenting my learning process.
 
-Cada solución se verifica en el sitio web oficial de Project Euler antes de marcarla como completa.
+Every solution is verified on the official Project Euler website before being marked as complete.
 
-## Mi Enfoque
+## My Approach
 
-Mi metodología se enfoca en entender los conceptos matemáticos detrás de cada problema en lugar de solo encontrar una solución que funcione.
+My methodology focuses on understanding the mathematical concepts behind each problem rather than just finding a working solution.
 
-Priorizo:
-- Código Python claro y legible
-- Explicaciones matemáticas y documentación del proceso de pensamiento
-- Verificación de resultados en el sitio web oficial de Project Euler
-- Mejora iterativa de las soluciones para optimización
-- **No usar librerías externas**: construir herramientas propias cuando sea necesario
+Priorities:
+- Clear, readable Python code
+- Mathematical explanations and thought process documentation
+- Verification of results on the official Project Euler website
+- Iterative improvement and optimization of solutions
+- **No external libraries**: build my own tools when needed
 
-## Filosofía de dependencias
+## Dependency Philosophy
 
-Este proyecto sigue una regla simple:
+This project follows a simple rule:
 
-> Resolver con Python puro y utilidades propias, sin paquetes de terceros.
+> Solve with pure Python and custom utilities — no third-party packages.
 
-Cuando un problema requiera funciones reutilizables (primos, factores, divisores, etc.), estas se incorporarán en una librería interna del proyecto.
+When a problem requires reusable functions (primes, factors, divisors, etc.), they are built into the project's internal library.
 
-## Librería interna: `euler_lib`
+## Internal Library: `euler_lib`
 
-La carpeta `euler_lib/` contiene una librería propia de apoyo a los notebooks con funciones matemáticas reutilizables.
+The `euler_lib/` folder contains a custom support library for the notebooks with reusable mathematical functions.
 
-### Funciones disponibles
+### Available Functions
 
-| Función | Módulo | Descripción |
+| Function | Module | Description |
 |---|---|---|
-| `factores_primos(n)` | `factores_primos.py` | Descompone un número entero en sus factores primos |
+| `criba_eratostenes(n)` | `criba_eratostenes.py` | Sieve of Eratosthenes — returns all primes up to `n` |
+| `es_primo(n)` | `es_primo.py` | Primality test via trial division up to $\sqrt{n}$ |
+| `factores_primos(n)` | `factores_primos.py` | Prime factorization — returns list of prime factors (with repetition) |
+| `numeros_divisibles(n)` | `numeros_divisibles.py` | Returns a sorted list of all divisors of `n` |
+| `potencias_factores(factors)` | `potencias_factores.py` | Maps a list of prime factors to a `{prime: exponent}` dict |
 
-### Uso
+### Usage
 
 ```python
 import euler_lib as euler
 
-euler.factores_primos(600851475143)  # [71, 839, 1471, 6857]
+euler.factores_primos(600851475143)   # [71, 839, 1471, 6857]
+euler.criba_eratostenes(30)           # [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+euler.es_primo(7)                     # True
+euler.numeros_divisibles(28)          # [1, 2, 4, 7, 14, 28]
+euler.potencias_factores([2, 2, 3])   # {2: 2, 3: 1}
 ```
 
-Con el tiempo, esta librería se expandirá con más funciones matemáticas reutilizables para evitar duplicación de lógica entre problemas.
+## Problems Solved
 
-## Detalles Técnicos
+| # | Problem | Status | Uses `euler_lib`? |
+|--:|---|---|---|
+| 001 | [Multiples of 3 or 5](problems/001_multiples_of_3_or_5.ipynb) | ✅ Solved | — |
+| 002 | [Even Fibonacci Numbers](problems/002_even_fibonacci_numbers.ipynb) | ✅ Solved | — |
+| 003 | [Largest Prime Factor](problems/003_largest_prime_factor.ipynb) | ✅ Solved | `factores_primos` |
+| 004 | [Largest Palindrome Product](problems/004_largest_palindrome_product.ipynb) | ✅ Solved | — |
+| 005 | [Smallest Multiple](problems/005_smallest_multiple.ipynb) | ✅ Solved | `factores_primos`, `potencias_factores` |
+| 006 | [Sum Square Difference](problems/006_sum_square_difference.ipynb) | ✅ Solved | — |
+| 007 | [10 001st Prime](problems/007_10001st_prime.ipynb) | ✅ Solved | `es_primo` |
+| 008 | [Largest Product in a Series](problems/008_largest_product_in_a_series.ipynb) | ✅ Solved | — |
+| 009 | [Special Pythagorean Triplet](problems/009_special_pythagorean_triplet.ipynb) | ✅ Solved | — |
+| 010 | [Summation of Primes](problems/010_summation_of_primes.ipynb) | ✅ Solved | `criba_eratostenes` |
+| 011 | [Largest Product in a Grid](problems/011_largest_product_in_a_grid.ipynb) | ⚠️ In progress | — |
+| 012 | [Highly Divisible Triangular Number](problems/012_highly_divisible_triangular_number.ipynb) | ✅ Solved | `numeros_divisibles` |
+| 013 | [Large Sum](problems/013_large_sum.ipynb) | ✅ Solved | — |
 
-- **Lenguaje:** Python (puro, sin librerías externas)
-- **Formato principal:** Jupyter Notebooks (`.ipynb`)
-- **Utilidades internas:** módulo propio `euler_lib/`
+## Technical Details
 
-## Cómo Usar
+- **Language:** Python (pure, no external libraries)
+- **Main format:** Jupyter Notebooks (`.ipynb`)
+- **Internal utilities:** custom `euler_lib/` module
 
-Cada notebook contiene:
-1. Enunciado original del problema
-2. Solución en Python
-3. (Opcional) notas o insights matemáticos
+## How to Use
 
-Puedes abrirlos en Jupyter o cualquier visor compatible con notebooks.
+Each notebook in the `problems/` folder contains:
+1. Original problem statement
+2. Python solution
+3. (Optional) mathematical notes or insights
 
-## Estructura del repositorio (resumen)
+You can open them in Jupyter, VS Code, or any notebook-compatible viewer.
 
-- `001_multiples_of_3_or_5.ipynb` … `013_large_sum.ipynb`
-- `euler_lib/`
-	- `__init__.py`
-	- `factores_primos.py`
-- `README.md`
+## Repository Structure
 
-## Sobre Project Euler
+```
+Project-Euler/
+├── problems/
+│   ├── 000_TEST.ipynb
+│   ├── 001_multiples_of_3_or_5.ipynb
+│   ├── ...
+│   └── 013_large_sum.ipynb
+├── euler_lib/
+│   ├── __init__.py
+│   ├── criba_eratostenes.py
+│   ├── es_primo.py
+│   ├── factores_primos.py
+│   ├── numeros_divisibles.py
+│   └── potencias_factores.py
+└── README.md
+```
 
-Project Euler es una serie de problemas desafiantes de matemáticas/programación que requieren más que solo conocimientos matemáticos para resolver.
+## About Project Euler
 
-Visita [projecteuler.net](https://projecteuler.net/) para explorar todos los problemas.
+Project Euler is a series of challenging mathematical and computational problems that require more than just mathematical knowledge to solve.
+
+Visit [projecteuler.net](https://projecteuler.net/) to explore all problems.
 
 ---
 
-*Este repositorio funciona como viaje de aprendizaje y portafolio técnico. Las soluciones y la librería interna evolucionan de forma continua con fines educativos.*
+*This repository serves as both a learning journey and a technical portfolio. Solutions and the internal library evolve continuously for educational purposes.*
